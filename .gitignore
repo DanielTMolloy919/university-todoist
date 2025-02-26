@@ -5,6 +5,7 @@ build/
 dist/
 wheels/
 *.egg-info
+university_tasks.csv
 
 # Virtual environments
 .venv

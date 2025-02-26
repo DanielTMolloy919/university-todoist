@@ -4,19 +4,19 @@ from typing import List, Dict
 
 # ===== CONFIGURATION (EDIT THESE VALUES) =====
 # Name of the class (e.g., "COMP3100 Lecture")
-CLASS_NAME = "COMP3100 Lecture"
+CLASS_NAME = "INFT3100 Lecture"
 
 # Start date of the semester (YYYY-MM-DD)
-START_DATE = "2023-02-27"
+START_DATE = "2025-02-24"
 
 # Day of the week when the class happens (0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday)
-CLASS_DAY = 0  # Monday by default
+CLASS_DAY = 1  # Monday by default
 
 # Total number of weeks in the semester
-NUM_WEEKS = 12
+NUM_WEEKS = 13
 
 # List of week numbers when there's a midsemester break (e.g., [7, 8])
-BREAK_WEEKS = [7, 8]
+BREAK_WEEKS = [8, 9]
 
 # Output CSV file name
 OUTPUT_FILE = "university_tasks.csv"
@@ -83,6 +83,7 @@ def generate_university_tasks(
     
     # Generate tasks for each week
     current_date = first_class_date
+    lecture_count = 1  # Counter for lecture number
     for week in range(1, num_weeks + 1):
         # Skip tasks for break weeks
         if week in break_weeks:
@@ -92,7 +93,7 @@ def generate_university_tasks(
             # Add class task
             tasks.append({
                 "TYPE": "task",
-                "CONTENT": f"{class_name} Week {week} ({day_name})",
+                "CONTENT": f"{class_name} {lecture_count} ({day_name})",
                 "DESCRIPTION": "",
                 "PRIORITY": "4",
                 "INDENT": "1",
@@ -106,6 +107,7 @@ def generate_university_tasks(
                 "DEADLINE": "",
                 "DEADLINE_LANG": ""
             })
+            lecture_count += 1  # Increment lecture count only when a lecture is added
         
         # Move to next week
         current_date += datetime.timedelta(days=7)
