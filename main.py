@@ -4,7 +4,7 @@ from typing import List, Dict
 
 # ===== CONFIGURATION (EDIT THESE VALUES) =====
 # Name of the class (e.g., "COMP3100 Lecture")
-CLASS_NAME = "INFT3100 Lecture"
+CLASS_NAME = "SENG2130 Lecture"
 
 # Start date of the semester (YYYY-MM-DD)
 START_DATE = "2025-02-24"
@@ -93,7 +93,7 @@ def generate_university_tasks(
             # Add class task
             tasks.append({
                 "TYPE": "task",
-                "CONTENT": f"{class_name} {lecture_count} ({day_name})",
+                "CONTENT": f"{class_name} {lecture_count} @University",
                 "DESCRIPTION": "",
                 "PRIORITY": "4",
                 "INDENT": "1",
